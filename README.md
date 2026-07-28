@@ -19,13 +19,12 @@ Python 3.9+ recommended.
 
 ## Data and trained models
 
-Raw audio recordings and trained models are not included in this repository
-(large binary files). Download them from:
+The repository includes the raw audio recordings used in the study and the
+trained FP32 and INT8 models required to reproduce the reported results.
+All experimental results reported in the paper can be reproduced using the
+included data, models, and source code.
 
-https://drive.google.com/drive/folders/1BjiLzbeibAlc4Ta5Wh0uH-KnvVMewXxW
-
-Place the downloaded contents under `data/raw/` and `models/` at the repo
-root. Expected layout (`.wav` and `.m4a` both supported):
+Directory layout (`.wav` and `.m4a` both supported):
 
 ```
 data/raw/<N>cm/normal/trial<N>.wav       # session 1 (open air)
@@ -37,7 +36,15 @@ data/raw/<N>cm_s4/fault/trial<N>.m4a
 data/raw/ambient.wav                     # session 1 SNR reference
 data/raw/ambient_s3.m4a                  # session 3 SNR reference
 data/raw/ambient_s4.m4a                  # session 4 SNR reference
+
+models/
+├── fp32.keras / fp32.tflite
+└── int8.tflite
 ```
+
+`src/prepare.py` regenerates `data/processed/` (segmented clips, log-mel
+features, per-clip SNR) from `data/raw/`; that derived cache is not
+committed since it's large and reproducible from source.
 
 No real audio on hand? `python3 scripts/generate_synthetic.py` creates a
 synthetic dataset so the pipeline can be smoke-tested end-to-end — useful
