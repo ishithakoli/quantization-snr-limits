@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # run_pipeline.sh - run the core experiment end-to-end
-# Usage:
-#   ./run_pipeline.sh           # uses synthetic data (generates it first) - smoke test only
-#   ./run_pipeline.sh --real    # skips generate_synthetic.py (use your real recordings)
+# Usage (from anywhere - this script cd's to the repo root first):
+#   ./scripts/run_pipeline.sh           # uses synthetic data (generates it first) - smoke test only
+#   ./scripts/run_pipeline.sh --real    # skips generate_synthetic.py (use your real recordings)
 #
 # Real recordings expected layout (see README.md for full details):
 #   data/raw/<N>cm[_s3|_s4]/normal/trial<N>.{wav,m4a}
@@ -14,6 +14,7 @@
 # which result" table).
 
 set -e
+cd "$(dirname "$0")/.."   # repo root, regardless of caller's cwd
 VENV=".venv/bin/python"
 
 if [ "$1" != "--real" ]; then

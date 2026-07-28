@@ -47,9 +47,10 @@ numbers.
 ## Repository structure
 
 ```
-src/        core pipeline - reproduces every result reported in the paper
-scripts/    follow-up/exploratory analyses (not part of the paper's
-            reported results, but informed the investigation)
+src/        core pipeline (.py) - reproduces every result reported in the paper
+scripts/    shell entry points + follow-up/exploratory analyses (.py) not
+            part of the paper's reported results, but informing the
+            investigation
 results/    JSON outputs corresponding to the paper's reported results
 figures/    the paper's figures, as rendered by src/make_figures.py
 ```
@@ -68,8 +69,8 @@ python3 src/cross_fan_eval.py  # cross-source generalization probe
 python3 src/make_figures.py    # renders all paper figures to figures/
 ```
 
-Or run the first five as one step: `./run_pipeline.sh --real` (omit `--real`
-to use synthetic data instead).
+Or run the first five as one step: `./scripts/run_pipeline.sh --real` (omit
+`--real` to use synthetic data instead).
 
 ## Which script produces which paper result
 
