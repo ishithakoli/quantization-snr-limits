@@ -22,7 +22,7 @@ Python 3.9+ recommended.
 Raw audio recordings and trained models are not included in this repository
 (large binary files). Download them from:
 
-https://drive.google.com/drive/folders/1-azwaC9SZ_SQqKuJ5b4clr4gEpJMIQmD?usp=sharing
+https://drive.google.com/drive/folders/1BjiLzbeibAlc4Ta5Wh0uH-KnvVMewXxW
 
 Place the downloaded contents under `data/raw/` and `models/` at the repo
 root. Expected layout (`.wav` and `.m4a` both supported):
