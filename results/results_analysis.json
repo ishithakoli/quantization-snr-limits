@@ -1,0 +1,10 @@
+{
+  "n_points": 8,
+  "logistic_rss": 0.5574437743419285,
+  "logistic_midpoint_snr": 9.817256115146993,
+  "logistic_steepness_k": 9.386548624598948,
+  "step_rss": 0.45810179959826064,
+  "step_breakpoint_snr": -4.9514510224662205,
+  "interpretation": "cliff-like",
+  "snr_where_gap_exceeds_0.2": null
+}
